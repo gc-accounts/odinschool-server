@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_properties_curricula",
+  "info": {
+    "displayName": "Curriculum",
+    "icon": "apps",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "lessons": {
+      "type": "integer"
+    },
+    "description": {
+      "type": "richtext"
+    }
+  }
+}

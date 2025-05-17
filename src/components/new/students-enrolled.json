@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_new_students_enrolleds",
+  "info": {
+    "displayName": "Students enrolled"
+  },
+  "options": {},
+  "attributes": {
+    "total_enrolled": {
+      "type": "integer"
+    },
+    "enrolled_avatars": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

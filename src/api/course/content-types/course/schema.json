@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "courses",
+  "info": {
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "level": {
+      "type": "string"
+    },
+    "on_sale": {
+      "type": "boolean"
+    },
+    "has_certificate": {
+      "type": "boolean"
+    },
+    "rating": {
+      "displayName": "rating",
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.rating"
+    },
+    "enrolled_students": {
+      "displayName": "Students enrolled",
+      "type": "component",
+      "repeatable": false,
+      "component": "new.students-enrolled"
+    },
+    "overview": {
+      "type": "richtext"
+    },
+    "curriculum": {
+      "displayName": "Curriculum",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.curriculum"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "resources": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::resource.resource",
+      "mappedBy": "courses_using"
+    }
+  }
+}

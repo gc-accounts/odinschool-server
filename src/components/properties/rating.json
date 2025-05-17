@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_properties_ratings",
+  "info": {
+    "displayName": "rating",
+    "icon": "star"
+  },
+  "options": {},
+  "attributes": {
+    "overall_rating": {
+      "type": "decimal"
+    },
+    "total_rated": {
+      "type": "integer"
+    }
+  }
+}
