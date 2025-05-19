@@ -2,7 +2,7 @@ import path from 'path';
 
 export default ({ env }) => {
 
-  if(env('DATABASE_CLIENT') === 'sqlite') {
+  if (env('DATABASE_CLIENT') === 'sqlite') {
     return {
       connection: {
         filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
@@ -20,7 +20,7 @@ export default ({ env }) => {
         database: env('DATABASE_NAME', 'postgres'),
         user: env('DATABASE_USERNAME', 'postgres'),
         password: env('DATABASE_PASSWORD', 'ultimate'),
-        ssl: env.bool('DATABASE_SSL', true),
+        ssl: { rejectUnauthorized: false }
       },
     },
   };
