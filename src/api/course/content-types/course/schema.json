@@ -55,6 +55,21 @@
       "relation": "manyToMany",
       "target": "api::resource.resource",
       "mappedBy": "courses_using"
+    },
+    "url_slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "image_url": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

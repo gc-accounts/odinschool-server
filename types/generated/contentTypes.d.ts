@@ -528,6 +528,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       false
     >;
     has_certificate: Schema.Attribute.Boolean;
+    image_url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -548,6 +549,9 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url_slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
   };
 }
 

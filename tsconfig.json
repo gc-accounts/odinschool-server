@@ -2,7 +2,7 @@
   "compilerOptions": {
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "lib": ["ES2020"],
+    "lib": ["ES2020", "DOM"],
     "target": "ES2019",
     "strict": false,
     "skipLibCheck": true,
@@ -13,7 +13,10 @@
     "noEmitOnError": true,
     "noImplicitThis": true,
     "outDir": "dist",
-    "rootDir": "."
+    "rootDir": ".",
+    "jsx": "react",
+    "jsxFactory": "React.createElement",
+    "jsxFragmentFactory": "React.Fragment"
   },
   "include": [
     // Include root files
@@ -22,6 +25,10 @@
     "./**/*.ts",
     // Include all js files
     "./**/*.js",
+    // Include all jsx files
+    "./**/*.jsx",
+    // Include all tsx files
+    "./**/*.tsx",
     // Force the JSON files in the src folder to be included
     "src/**/*.json"
   ],
