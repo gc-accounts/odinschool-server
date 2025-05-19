@@ -3,9 +3,10 @@ import path from 'path';
 export default ({ env }) => {
 
 
-  if (env('DATABASE_CLIENT') === 'sqlite') {
+  if (env('IS_DEVELOPMENT') === 'true') {
     return {
       connection: {
+        client: 'sqlite',
         filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
       },
       useNullAsDefault: true,
@@ -14,6 +15,7 @@ export default ({ env }) => {
 
   return {
     connection: {
+      client: 'sqlite',
       filename: path.join(__dirname, '..', '..', '.db/current.db'),
     },
     useNullAsDefault: true,
