@@ -13,15 +13,15 @@ export default ({ env }) => {
 
   return {
     connection: {
-      client: "postgres",
+      client: 'postgres',
       connection: {
-        host: env("DATABASE_HOST", "127.0.0.1"),
-        port: env.int("DATABASE_PORT", 5432),
-        database: env("DATABASE_NAME", "strapi"),
-        user: env("DATABASE_USERNAME", ""),
-        password: env("DATABASE_PASSWORD", ""),
+        host: env('DATABASE_HOST', 'database-1.cjl5dn4w6t2w.ap-south-1.rds.amazonaws.com'),
+        port: env.int('DATABASE_PORT', 5432),
+        database: env('DATABASE_NAME', 'postgres'),
+        user: env('DATABASE_USERNAME', 'postgres'),
+        password: env('DATABASE_PASSWORD', 'ultimate'),
+        ssl: env.bool('DATABASE_SSL', false),
       },
-      useNullAsDefault: true,
-    }
+    },
   };
 };
