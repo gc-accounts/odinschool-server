@@ -1,21 +1,17 @@
 import path from 'path';
 
 export default ({ env }) => {
-  if (env('IS_DEVELOPMENT') === 'true') {
-    return {
-      client: 'sqlite',
-      connection: {
-        filename: path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db')),
-      },
-      useNullAsDefault: true,
-    };
-  }
+  const isDev = env.bool('IS_DEVELOPMENT', true);   // helper – treats “true”/“false” as booleans
 
   return {
-    client: 'sqlite',
     connection: {
-      filename: path.join(__dirname, '..', '..', '.db/current.db'),
+      client: 'sqlite',
+      connection: {
+        filename: isDev
+          ? path.join(__dirname, '..', '..', env('DATABASE_FILENAME', '.tmp/data.db'))
+          : path.join(__dirname, '..', '..', '.db/current.db'),
+      },
+      useNullAsDefault: true,
     },
-    useNullAsDefault: true,
   };
 };
