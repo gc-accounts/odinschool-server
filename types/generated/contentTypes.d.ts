@@ -518,6 +518,7 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
   };
   attributes: {
     country: Schema.Attribute.Relation<'manyToOne', 'api::country.country'>;
+    courses: Schema.Attribute.Relation<'oneToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -533,6 +534,7 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    webinars: Schema.Attribute.Relation<'oneToMany', 'api::webinar.webinar'>;
   };
 }
 
@@ -573,6 +575,78 @@ export interface ApiCountryCountry extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCourseModuleCourseModule
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'course_modules';
+  info: {
+    description: '';
+    displayName: 'Course Module';
+    pluralName: 'course-modules';
+    singularName: 'course-module';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course: Schema.Attribute.Relation<'manyToOne', 'api::course.course'>;
+    course_topics: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-topic.course-topic'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiCourseTopicCourseTopic extends Struct.CollectionTypeSchema {
+  collectionName: 'course_topics';
+  info: {
+    displayName: 'Course Topic';
+    pluralName: 'course-topics';
+    singularName: 'course-topic';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    course_module: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::course-module.course-module'
+    >;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-topic.course-topic'
+    > &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    video_slug: Schema.Attribute.String;
+  };
+}
+
 export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   collectionName: 'courses';
   info: {
@@ -585,7 +659,11 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    city: Schema.Attribute.String;
+    city: Schema.Attribute.Relation<'manyToOne', 'api::city.city'>;
+    course_modules: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::course-module.course-module'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -805,6 +883,7 @@ export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about_instructor: Schema.Attribute.RichText;
+    city: Schema.Attribute.Relation<'manyToOne', 'api::city.city'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1353,6 +1432,8 @@ declare module '@strapi/strapi' {
       'api::category.category': ApiCategoryCategory;
       'api::city.city': ApiCityCity;
       'api::country.country': ApiCountryCountry;
+      'api::course-module.course-module': ApiCourseModuleCourseModule;
+      'api::course-topic.course-topic': ApiCourseTopicCourseTopic;
       'api::course.course': ApiCourseCourse;
       'api::global.global': ApiGlobalGlobal;
       'api::profile.profile': ApiProfileProfile;

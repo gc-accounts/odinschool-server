@@ -26,6 +26,18 @@
       "relation": "manyToOne",
       "target": "api::country.country",
       "inversedBy": "cities"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course.course",
+      "mappedBy": "city"
+    },
+    "webinars": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::webinar.webinar",
+      "mappedBy": "city"
     }
   }
 }

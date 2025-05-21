@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_topics",
+  "info": {
+    "singularName": "course-topic",
+    "pluralName": "course-topics",
+    "displayName": "Course Topic"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "video_slug": {
+      "type": "string"
+    },
+    "course_module": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course-module.course-module",
+      "inversedBy": "course_topics"
+    }
+  }
+}

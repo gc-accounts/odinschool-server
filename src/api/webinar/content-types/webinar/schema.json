@@ -59,6 +59,12 @@
     },
     "is_featured": {
       "type": "boolean"
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "webinars"
     }
   }
 }

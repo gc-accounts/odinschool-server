@@ -73,7 +73,16 @@
       ]
     },
     "city": {
-      "type": "string"
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "courses"
+    },
+    "course_modules": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::course-module.course-module",
+      "mappedBy": "course"
     }
   }
 }
