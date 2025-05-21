@@ -518,6 +518,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    city: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -656,6 +657,43 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
+  collectionName: 'testimonials';
+  info: {
+    description: '';
+    displayName: 'Testimonial';
+    pluralName: 'testimonials';
+    singularName: 'testimonial';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.RichText;
+    link: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::testimonial.testimonial'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    rating: Schema.Attribute.Decimal;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+    source: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    user: Schema.Attribute.String;
+  };
+}
+
 export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
   collectionName: 'webinars';
   info: {
@@ -677,6 +715,7 @@ export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
     duration: Schema.Attribute.Integer;
     image_url: Schema.Attribute.String;
     Instructor: Schema.Attribute.String;
+    is_featured: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1218,6 +1257,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::profile.profile': ApiProfileProfile;
       'api::resource.resource': ApiResourceResource;
+      'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::webinar.webinar': ApiWebinarWebinar;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
