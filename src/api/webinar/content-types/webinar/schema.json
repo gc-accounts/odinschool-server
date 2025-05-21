@@ -53,6 +53,9 @@
     },
     "tags": {
       "type": "string"
+    },
+    "image_url": {
+      "type": "string"
     }
   }
 }

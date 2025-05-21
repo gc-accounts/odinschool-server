@@ -675,6 +675,7 @@ export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
     date: Schema.Attribute.Date;
     description: Schema.Attribute.RichText;
     duration: Schema.Attribute.Integer;
+    image_url: Schema.Attribute.String;
     Instructor: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
