@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "countries",
+  "info": {
+    "singularName": "country",
+    "pluralName": "countries",
+    "displayName": "Country",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "timezone": {
+      "type": "string"
+    },
+    "timezone_code": {
+      "type": "string"
+    },
+    "currency": {
+      "type": "string"
+    },
+    "converted_rate": {
+      "type": "decimal"
+    },
+    "cities": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::city.city",
+      "mappedBy": "country"
+    }
+  }
+}

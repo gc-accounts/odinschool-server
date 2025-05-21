@@ -46,6 +46,15 @@ export interface PropertiesJoinedStudents extends Struct.ComponentSchema {
   attributes: {};
 }
 
+export interface PropertiesJourney extends Struct.ComponentSchema {
+  collectionName: 'components_properties_journeys';
+  info: {
+    displayName: 'Journey';
+    icon: 'car';
+  };
+  attributes: {};
+}
+
 export interface PropertiesRating extends Struct.ComponentSchema {
   collectionName: 'components_properties_ratings';
   info: {
@@ -127,6 +136,7 @@ declare module '@strapi/strapi' {
       'properties.curriculum': PropertiesCurriculum;
       'properties.file': PropertiesFile;
       'properties.joined-students': PropertiesJoinedStudents;
+      'properties.journey': PropertiesJourney;
       'properties.rating': PropertiesRating;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;

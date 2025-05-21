@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "success_story_metrics",
+  "info": {
+    "singularName": "success-story-metric",
+    "pluralName": "success-story-metrics",
+    "displayName": "Success Story Metric"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "salary_increase": {
+      "type": "decimal"
+    },
+    "placement_rate": {
+      "type": "decimal"
+    },
+    "student_satisfaction": {
+      "type": "decimal"
+    }
+  }
+}
