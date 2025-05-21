@@ -67,6 +67,28 @@ export interface PropertiesRating extends Struct.ComponentSchema {
   };
 }
 
+export interface PropertiesSuccessStories extends Struct.ComponentSchema {
+  collectionName: 'components_properties_success_stories';
+  info: {
+    description: '';
+    displayName: 'Success Stories';
+    icon: 'restaurant';
+  };
+  attributes: {
+    current_position: Schema.Attribute.String;
+    description: Schema.Attribute.RichText;
+    description_course: Schema.Attribute.RichText;
+    image_url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    investment_roi: Schema.Attribute.Decimal;
+    link: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    salary_increase: Schema.Attribute.Decimal;
+    skills: Schema.Attribute.String;
+    time_to_job: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -138,6 +160,7 @@ declare module '@strapi/strapi' {
       'properties.joined-students': PropertiesJoinedStudents;
       'properties.journey': PropertiesJourney;
       'properties.rating': PropertiesRating;
+      'properties.success-stories': PropertiesSuccessStories;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;

@@ -806,6 +806,7 @@ export interface ApiSuccessStoryMetricSuccessStoryMetric
   extends Struct.SingleTypeSchema {
   collectionName: 'success_story_metrics';
   info: {
+    description: '';
     displayName: 'Success Story Metric';
     pluralName: 'success-story-metrics';
     singularName: 'success-story-metric';
@@ -827,6 +828,10 @@ export interface ApiSuccessStoryMetricSuccessStoryMetric
     publishedAt: Schema.Attribute.DateTime;
     salary_increase: Schema.Attribute.Decimal;
     student_satisfaction: Schema.Attribute.Decimal;
+    success_stories: Schema.Attribute.Component<
+      'properties.success-stories',
+      true
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "success-story-metric",
     "pluralName": "success-story-metrics",
-    "displayName": "Success Story Metric"
+    "displayName": "Success Story Metric",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,12 @@
     },
     "student_satisfaction": {
       "type": "decimal"
+    },
+    "success_stories": {
+      "displayName": "Success Stories",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.success-stories"
     }
   }
 }
