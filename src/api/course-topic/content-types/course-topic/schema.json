@@ -4,7 +4,8 @@
   "info": {
     "singularName": "course-topic",
     "pluralName": "course-topics",
-    "displayName": "Course Topic"
+    "displayName": "Course Topic",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,14 +20,15 @@
       "unique": true
     },
     "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "video_slug": {
       "type": "string"
@@ -36,6 +38,12 @@
       "relation": "manyToOne",
       "target": "api::course-module.course-module",
       "inversedBy": "course_topics"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "display_order": {
+      "type": "integer"
     }
   }
 }

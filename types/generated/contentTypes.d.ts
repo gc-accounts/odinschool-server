@@ -638,23 +638,36 @@ export interface ApiCourseModuleCourseModule
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.String;
+    display_order: Schema.Attribute.Integer;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    image_url: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-module.course-module'
     > &
       Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    old_id: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
+    rich_description: Schema.Attribute.RichText;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    video_slug: Schema.Attribute.String;
   };
 }
 
 export interface ApiCourseTopicCourseTopic extends Struct.CollectionTypeSchema {
   collectionName: 'course_topics';
   info: {
+    description: '';
     displayName: 'Course Topic';
     pluralName: 'course-topics';
     singularName: 'course-topic';
@@ -670,6 +683,8 @@ export interface ApiCourseTopicCourseTopic extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
+    display_order: Schema.Attribute.Integer;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -943,6 +958,7 @@ export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
     image_url: Schema.Attribute.String;
     Instructor: Schema.Attribute.String;
     is_featured: Schema.Attribute.Boolean;
+    is_odin_talk: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

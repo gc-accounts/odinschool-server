@@ -25,6 +25,55 @@
       "relation": "oneToMany",
       "target": "api::course-topic.course-topic",
       "mappedBy": "course_module"
+    },
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "old_id": {
+      "type": "string",
+      "unique": true
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "description": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "rich_description": {
+      "type": "richtext"
+    },
+    "video_slug": {
+      "type": "string"
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "display_order": {
+      "type": "integer"
     }
   }
 }
