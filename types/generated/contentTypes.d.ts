@@ -477,6 +477,7 @@ export interface ApiAuthorAuthor extends Struct.CollectionTypeSchema {
 export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   collectionName: 'blogs';
   info: {
+    description: '';
     displayName: 'Blog';
     pluralName: 'blogs';
     singularName: 'blog';
@@ -487,6 +488,7 @@ export interface ApiBlogBlog extends Struct.CollectionTypeSchema {
   attributes: {
     archived: Schema.Attribute.Boolean;
     author: Schema.Attribute.String;
+    blog_name: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
