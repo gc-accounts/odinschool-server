@@ -675,6 +675,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     >;
     has_certificate: Schema.Attribute.Boolean;
     image_url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    is_learning_hub: Schema.Attribute.Boolean;
     level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -850,11 +851,13 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
     description: Schema.Attribute.RichText;
+    is_careers: Schema.Attribute.Boolean;
     link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
