@@ -2,8 +2,19 @@
   "collectionName": "components_properties_educations",
   "info": {
     "displayName": "Education",
-    "icon": "book"
+    "icon": "book",
+    "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "degree": {
+      "type": "string"
+    },
+    "school": {
+      "type": "string"
+    },
+    "graduating_year": {
+      "type": "string"
+    }
+  }
 }

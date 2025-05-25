@@ -17,10 +17,14 @@ export interface NewStudentsEnrolled extends Struct.ComponentSchema {
 export interface PropertiesCompany extends Struct.ComponentSchema {
   collectionName: 'components_properties_companies';
   info: {
+    description: '';
     displayName: 'Company';
     icon: 'cog';
   };
-  attributes: {};
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
 }
 
 export interface PropertiesCurriculum extends Struct.ComponentSchema {
@@ -40,10 +44,15 @@ export interface PropertiesCurriculum extends Struct.ComponentSchema {
 export interface PropertiesEducation extends Struct.ComponentSchema {
   collectionName: 'components_properties_educations';
   info: {
+    description: '';
     displayName: 'Education';
     icon: 'book';
   };
-  attributes: {};
+  attributes: {
+    degree: Schema.Attribute.String;
+    graduating_year: Schema.Attribute.String;
+    school: Schema.Attribute.String;
+  };
 }
 
 export interface PropertiesFile extends Struct.ComponentSchema {

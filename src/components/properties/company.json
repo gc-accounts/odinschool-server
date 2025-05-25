@@ -2,8 +2,23 @@
   "collectionName": "components_properties_companies",
   "info": {
     "displayName": "Company",
-    "icon": "cog"
+    "icon": "cog",
+    "description": ""
   },
   "options": {},
-  "attributes": {}
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "logo": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
 }
