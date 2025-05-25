@@ -807,6 +807,7 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    companies: Schema.Attribute.Component<'properties.company', true>;
     courses: Schema.Attribute.Relation<'manyToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -814,6 +815,7 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.RichText;
     designation: Schema.Attribute.String;
     education: Schema.Attribute.Component<'properties.education', true>;
+    is_featured: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

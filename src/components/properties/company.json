@@ -1,0 +1,9 @@
+{
+  "collectionName": "components_properties_companies",
+  "info": {
+    "displayName": "Company",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {}
+}

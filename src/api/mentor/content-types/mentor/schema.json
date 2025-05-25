@@ -40,6 +40,15 @@
     },
     "tags": {
       "type": "string"
+    },
+    "is_featured": {
+      "type": "boolean"
+    },
+    "companies": {
+      "displayName": "Company",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.company"
     }
   }
 }

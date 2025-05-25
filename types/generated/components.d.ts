@@ -14,6 +14,15 @@ export interface NewStudentsEnrolled extends Struct.ComponentSchema {
   };
 }
 
+export interface PropertiesCompany extends Struct.ComponentSchema {
+  collectionName: 'components_properties_companies';
+  info: {
+    displayName: 'Company';
+    icon: 'cog';
+  };
+  attributes: {};
+}
+
 export interface PropertiesCurriculum extends Struct.ComponentSchema {
   collectionName: 'components_properties_curricula';
   info: {
@@ -164,6 +173,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'new.students-enrolled': NewStudentsEnrolled;
+      'properties.company': PropertiesCompany;
       'properties.curriculum': PropertiesCurriculum;
       'properties.education': PropertiesEducation;
       'properties.file': PropertiesFile;
