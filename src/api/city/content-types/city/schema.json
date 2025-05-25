@@ -46,6 +46,9 @@
     },
     "show_in_footer": {
       "type": "boolean"
+    },
+    "is_featured": {
+      "type": "boolean"
     }
   }
 }
