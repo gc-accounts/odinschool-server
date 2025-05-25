@@ -1,7 +1,8 @@
 {
   "collectionName": "components_properties_authors",
   "info": {
-    "displayName": "Author"
+    "displayName": "Author",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -13,6 +14,16 @@
     },
     "description": {
       "type": "string"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

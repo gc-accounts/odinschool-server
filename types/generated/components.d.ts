@@ -17,9 +17,11 @@ export interface NewStudentsEnrolled extends Struct.ComponentSchema {
 export interface PropertiesAuthor extends Struct.ComponentSchema {
   collectionName: 'components_properties_authors';
   info: {
+    description: '';
     displayName: 'Author';
   };
   attributes: {
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     description: Schema.Attribute.String;
     designation: Schema.Attribute.String;
     name: Schema.Attribute.String;
