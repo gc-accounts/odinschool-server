@@ -1048,8 +1048,8 @@ export interface ApiWebinarWebinar extends Struct.CollectionTypeSchema {
     duration: Schema.Attribute.Integer;
     image_url: Schema.Attribute.String;
     Instructor: Schema.Attribute.String;
-    is_featured: Schema.Attribute.Boolean;
-    is_odin_talk: Schema.Attribute.Boolean;
+    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    is_odin_talk: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

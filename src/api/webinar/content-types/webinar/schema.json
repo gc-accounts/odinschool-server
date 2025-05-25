@@ -58,7 +58,8 @@
       "type": "string"
     },
     "is_featured": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     },
     "city": {
       "type": "relation",
@@ -67,7 +68,8 @@
       "inversedBy": "webinars"
     },
     "is_odin_talk": {
-      "type": "boolean"
+      "type": "boolean",
+      "default": false
     }
   }
 }
