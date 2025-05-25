@@ -4,7 +4,8 @@
   "info": {
     "singularName": "city",
     "pluralName": "cities",
-    "displayName": "City"
+    "displayName": "City",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -38,6 +39,13 @@
       "relation": "oneToMany",
       "target": "api::webinar.webinar",
       "mappedBy": "city"
+    },
+    "status_bool": {
+      "type": "boolean",
+      "default": false
+    },
+    "show_in_footer": {
+      "type": "boolean"
     }
   }
 }
