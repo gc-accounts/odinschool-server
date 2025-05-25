@@ -823,6 +823,9 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.String;
+    logo_media: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     qualification: Schema.Attribute.String;
