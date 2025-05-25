@@ -45,6 +45,19 @@
       "type": "component",
       "repeatable": false,
       "component": "properties.author"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "poster": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }

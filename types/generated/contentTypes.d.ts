@@ -816,6 +816,7 @@ export interface ApiDataScienceCareerGuideDataScienceCareerGuide
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
     file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     itenaries: Schema.Attribute.Component<'properties.itenary', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
@@ -824,6 +825,7 @@ export interface ApiDataScienceCareerGuideDataScienceCareerGuide
       'api::data-science-career-guide.data-science-career-guide'
     > &
       Schema.Attribute.Private;
+    poster: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     publishedAt: Schema.Attribute.DateTime;
     sub_title: Schema.Attribute.String;
     title: Schema.Attribute.String;
