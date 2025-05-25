@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "stories",
+  "info": {
+    "singularName": "story",
+    "pluralName": "stories",
+    "displayName": "story"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "avatar": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "avatar_url": {
+      "type": "string"
+    },
+    "previous_designation": {
+      "type": "string"
+    },
+    "current_designation": {
+      "type": "string"
+    },
+    "current_job_location": {
+      "type": "string"
+    },
+    "current_company_image_url": {
+      "type": "string"
+    },
+    "current_company_image": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "student_remark": {
+      "type": "string"
+    },
+    "student_linkedin": {
+      "type": "string"
+    },
+    "testimonial_video_link": {
+      "type": "string"
+    },
+    "testimonial_video_thumbnail_link": {
+      "type": "string"
+    },
+    "testimonial_video": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "testimonial_video_thumbnail": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

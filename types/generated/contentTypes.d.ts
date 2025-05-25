@@ -951,6 +951,50 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiStoryStory extends Struct.CollectionTypeSchema {
+  collectionName: 'stories';
+  info: {
+    displayName: 'story';
+    pluralName: 'stories';
+    singularName: 'story';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    avatar: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    avatar_url: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    current_company_image: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    current_company_image_url: Schema.Attribute.String;
+    current_designation: Schema.Attribute.String;
+    current_job_location: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::story.story'> &
+      Schema.Attribute.Private;
+    name: Schema.Attribute.String;
+    previous_designation: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    student_linkedin: Schema.Attribute.String;
+    student_remark: Schema.Attribute.String;
+    testimonial_video: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    testimonial_video_link: Schema.Attribute.String;
+    testimonial_video_thumbnail: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
+    testimonial_video_thumbnail_link: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiSuccessStoryMetricSuccessStoryMetric
   extends Struct.SingleTypeSchema {
   collectionName: 'success_story_metrics';
@@ -1598,6 +1642,7 @@ declare module '@strapi/strapi' {
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
       'api::resource.resource': ApiResourceResource;
+      'api::story.story': ApiStoryStory;
       'api::success-story-metric.success-story-metric': ApiSuccessStoryMetricSuccessStoryMetric;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'api::webinar.webinar': ApiWebinarWebinar;
