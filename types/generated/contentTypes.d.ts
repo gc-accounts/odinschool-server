@@ -954,6 +954,7 @@ export interface ApiResourceResource extends Struct.CollectionTypeSchema {
 export interface ApiStoryStory extends Struct.CollectionTypeSchema {
   collectionName: 'stories';
   info: {
+    description: '';
     displayName: 'story';
     pluralName: 'stories';
     singularName: 'story';
@@ -973,6 +974,7 @@ export interface ApiStoryStory extends Struct.CollectionTypeSchema {
     current_company_image_url: Schema.Attribute.String;
     current_designation: Schema.Attribute.String;
     current_job_location: Schema.Attribute.String;
+    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::story.story'> &
       Schema.Attribute.Private;

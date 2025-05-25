@@ -4,7 +4,8 @@
   "info": {
     "singularName": "story",
     "pluralName": "stories",
-    "displayName": "story"
+    "displayName": "story",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,14 +15,15 @@
       "type": "string"
     },
     "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "avatar_url": {
       "type": "string"
@@ -39,14 +41,15 @@
       "type": "string"
     },
     "current_company_image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "student_remark": {
       "type": "string"
@@ -61,24 +64,30 @@
       "type": "string"
     },
     "testimonial_video": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
     },
     "testimonial_video_thumbnail": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false
+      ]
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
