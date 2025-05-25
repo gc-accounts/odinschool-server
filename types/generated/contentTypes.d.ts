@@ -794,6 +794,37 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
+  collectionName: 'mentors';
+  info: {
+    displayName: 'Mentor';
+    pluralName: 'mentors';
+    singularName: 'mentor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    designation: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::mentor.mentor'
+    > &
+      Schema.Attribute.Private;
+    logo: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    qualification: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProfileProfile extends Struct.CollectionTypeSchema {
   collectionName: 'profiles';
   info: {
@@ -1506,6 +1537,7 @@ declare module '@strapi/strapi' {
       'api::course-topic.course-topic': ApiCourseTopicCourseTopic;
       'api::course.course': ApiCourseCourse;
       'api::global.global': ApiGlobalGlobal;
+      'api::mentor.mentor': ApiMentorMentor;
       'api::profile.profile': ApiProfileProfile;
       'api::resource.resource': ApiResourceResource;
       'api::success-story-metric.success-story-metric': ApiSuccessStoryMetricSuccessStoryMetric;
