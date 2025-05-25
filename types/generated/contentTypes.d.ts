@@ -798,6 +798,41 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDataScienceCareerGuideDataScienceCareerGuide
+  extends Struct.SingleTypeSchema {
+  collectionName: 'data_science_career_guides';
+  info: {
+    description: '';
+    displayName: 'Data Science Career Guide';
+    pluralName: 'data-science-career-guides';
+    singularName: 'data-science-career-guide';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.Component<'properties.author', false>;
+    content: Schema.Attribute.Component<'properties.content', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    itenaries: Schema.Attribute.Component<'properties.itenary', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::data-science-career-guide.data-science-career-guide'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   collectionName: 'globals';
   info: {
@@ -1704,6 +1739,7 @@ declare module '@strapi/strapi' {
       'api::course-module.course-module': ApiCourseModuleCourseModule;
       'api::course-topic.course-topic': ApiCourseTopicCourseTopic;
       'api::course.course': ApiCourseCourse;
+      'api::data-science-career-guide.data-science-career-guide': ApiDataScienceCareerGuideDataScienceCareerGuide;
       'api::global.global': ApiGlobalGlobal;
       'api::mentor.mentor': ApiMentorMentor;
       'api::organisation.organisation': ApiOrganisationOrganisation;

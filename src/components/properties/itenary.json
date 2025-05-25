@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_properties_itenaries",
+  "info": {
+    "displayName": "itenary"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    }
+  }
+}

@@ -14,6 +14,18 @@ export interface NewStudentsEnrolled extends Struct.ComponentSchema {
   };
 }
 
+export interface PropertiesAuthor extends Struct.ComponentSchema {
+  collectionName: 'components_properties_authors';
+  info: {
+    displayName: 'Author';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    designation: Schema.Attribute.String;
+    name: Schema.Attribute.String;
+  };
+}
+
 export interface PropertiesCompany extends Struct.ComponentSchema {
   collectionName: 'components_properties_companies';
   info: {
@@ -24,6 +36,17 @@ export interface PropertiesCompany extends Struct.ComponentSchema {
   attributes: {
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     name: Schema.Attribute.String;
+  };
+}
+
+export interface PropertiesContent extends Struct.ComponentSchema {
+  collectionName: 'components_properties_contents';
+  info: {
+    displayName: 'Content';
+  };
+  attributes: {
+    description: Schema.Attribute.RichText;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -62,6 +85,17 @@ export interface PropertiesFile extends Struct.ComponentSchema {
     icon: 'file';
   };
   attributes: {};
+}
+
+export interface PropertiesItenary extends Struct.ComponentSchema {
+  collectionName: 'components_properties_itenaries';
+  info: {
+    displayName: 'itenary';
+  };
+  attributes: {
+    sub_title: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
 }
 
 export interface PropertiesJoinedStudents extends Struct.ComponentSchema {
@@ -182,10 +216,13 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'new.students-enrolled': NewStudentsEnrolled;
+      'properties.author': PropertiesAuthor;
       'properties.company': PropertiesCompany;
+      'properties.content': PropertiesContent;
       'properties.curriculum': PropertiesCurriculum;
       'properties.education': PropertiesEducation;
       'properties.file': PropertiesFile;
+      'properties.itenary': PropertiesItenary;
       'properties.joined-students': PropertiesJoinedStudents;
       'properties.journey': PropertiesJourney;
       'properties.rating': PropertiesRating;

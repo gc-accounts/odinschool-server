@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "data_science_career_guides",
+  "info": {
+    "singularName": "data-science-career-guide",
+    "pluralName": "data-science-career-guides",
+    "displayName": "Data Science Career Guide",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "sub_title": {
+      "type": "string"
+    },
+    "itenaries": {
+      "displayName": "itenary",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.itenary"
+    },
+    "content": {
+      "displayName": "Content",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.content"
+    },
+    "file": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
+    },
+    "author": {
+      "displayName": "Author",
+      "type": "component",
+      "repeatable": false,
+      "component": "properties.author"
+    }
+  }
+}
