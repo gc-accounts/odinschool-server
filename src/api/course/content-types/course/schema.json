@@ -92,6 +92,9 @@
       "relation": "manyToMany",
       "target": "api::mentor.mentor",
       "mappedBy": "courses"
+    },
+    "is_featured": {
+      "type": "boolean"
     }
   }
 }

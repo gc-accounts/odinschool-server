@@ -735,6 +735,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     >;
     has_certificate: Schema.Attribute.Boolean;
     image_url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    is_featured: Schema.Attribute.Boolean;
     is_learning_hub: Schema.Attribute.Boolean;
     level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
