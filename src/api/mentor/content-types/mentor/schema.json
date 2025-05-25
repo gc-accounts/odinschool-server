@@ -4,7 +4,8 @@
   "info": {
     "singularName": "mentor",
     "pluralName": "mentors",
-    "displayName": "Mentor"
+    "displayName": "Mentor",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -20,6 +21,24 @@
       "type": "string"
     },
     "logo": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "inversedBy": "mentors"
+    },
+    "education": {
+      "displayName": "Education",
+      "type": "component",
+      "repeatable": true,
+      "component": "properties.education"
+    },
+    "tags": {
       "type": "string"
     }
   }

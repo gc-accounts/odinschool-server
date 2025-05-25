@@ -743,6 +743,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'api::course.course'
     > &
       Schema.Attribute.Private;
+    mentors: Schema.Attribute.Relation<'manyToMany', 'api::mentor.mentor'>;
     on_sale: Schema.Attribute.Boolean;
     overview: Schema.Attribute.RichText;
     publishedAt: Schema.Attribute.DateTime;
@@ -797,6 +798,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
 export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
   collectionName: 'mentors';
   info: {
+    description: '';
     displayName: 'Mentor';
     pluralName: 'mentors';
     singularName: 'mentor';
@@ -805,10 +807,13 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    courses: Schema.Attribute.Relation<'manyToMany', 'api::course.course'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    description: Schema.Attribute.RichText;
     designation: Schema.Attribute.String;
+    education: Schema.Attribute.Component<'properties.education', true>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -819,6 +824,7 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     qualification: Schema.Attribute.String;
+    tags: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

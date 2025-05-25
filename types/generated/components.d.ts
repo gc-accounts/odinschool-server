@@ -28,6 +28,15 @@ export interface PropertiesCurriculum extends Struct.ComponentSchema {
   };
 }
 
+export interface PropertiesEducation extends Struct.ComponentSchema {
+  collectionName: 'components_properties_educations';
+  info: {
+    displayName: 'Education';
+    icon: 'book';
+  };
+  attributes: {};
+}
+
 export interface PropertiesFile extends Struct.ComponentSchema {
   collectionName: 'components_properties_files';
   info: {
@@ -156,6 +165,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'new.students-enrolled': NewStudentsEnrolled;
       'properties.curriculum': PropertiesCurriculum;
+      'properties.education': PropertiesEducation;
       'properties.file': PropertiesFile;
       'properties.joined-students': PropertiesJoinedStudents;
       'properties.journey': PropertiesJourney;
