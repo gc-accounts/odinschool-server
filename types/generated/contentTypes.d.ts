@@ -781,6 +781,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     mentors: Schema.Attribute.Relation<'manyToMany', 'api::mentor.mentor'>;
     on_sale: Schema.Attribute.Boolean;
     overview: Schema.Attribute.RichText;
+    price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     rating: Schema.Attribute.Component<'properties.rating', false>;
     resources: Schema.Attribute.Relation<

@@ -95,6 +95,9 @@
     },
     "is_featured": {
       "type": "boolean"
+    },
+    "price": {
+      "type": "decimal"
     }
   }
 }
