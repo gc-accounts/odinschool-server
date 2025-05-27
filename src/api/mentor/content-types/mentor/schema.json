@@ -54,11 +54,20 @@
       "type": "integer"
     },
     "logo_media": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
+      ]
+    },
+    "photo": {
+      "allowedTypes": [
+        "images",
+        "files"
       ],
       "type": "media",
       "multiple": false
