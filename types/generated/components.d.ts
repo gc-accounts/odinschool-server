@@ -1,5 +1,30 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface BookChapter extends Struct.ComponentSchema {
+  collectionName: 'components_book_chapters';
+  info: {
+    displayName: 'chapter';
+  };
+  attributes: {
+    children: Schema.Attribute.Component<'book.children', true>;
+    content: Schema.Attribute.RichText;
+    is_html: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    title: Schema.Attribute.String;
+    url_slug: Schema.Attribute.String;
+  };
+}
+
+export interface BookChildren extends Struct.ComponentSchema {
+  collectionName: 'components_book_children';
+  info: {
+    displayName: 'children';
+  };
+  attributes: {
+    title: Schema.Attribute.String;
+    url_slug: Schema.Attribute.String;
+  };
+}
+
 export interface NewStudentsEnrolled extends Struct.ComponentSchema {
   collectionName: 'components_new_students_enrolleds';
   info: {
@@ -217,6 +242,8 @@ export interface SharedSlider extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'book.chapter': BookChapter;
+      'book.children': BookChildren;
       'new.students-enrolled': NewStudentsEnrolled;
       'properties.author': PropertiesAuthor;
       'properties.company': PropertiesCompany;

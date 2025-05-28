@@ -799,6 +799,35 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiDataScienceBookDataScienceBook
+  extends Struct.SingleTypeSchema {
+  collectionName: 'data_science_books';
+  info: {
+    displayName: 'Data Science Book';
+    pluralName: 'data-science-books';
+    singularName: 'data-science-book';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    chapers: Schema.Attribute.Component<'book.chapter', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::data-science-book.data-science-book'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiDataScienceCareerGuideDataScienceCareerGuide
   extends Struct.SingleTypeSchema {
   collectionName: 'data_science_career_guides';
@@ -1743,6 +1772,7 @@ declare module '@strapi/strapi' {
       'api::course-module.course-module': ApiCourseModuleCourseModule;
       'api::course-topic.course-topic': ApiCourseTopicCourseTopic;
       'api::course.course': ApiCourseCourse;
+      'api::data-science-book.data-science-book': ApiDataScienceBookDataScienceBook;
       'api::data-science-career-guide.data-science-career-guide': ApiDataScienceCareerGuideDataScienceCareerGuide;
       'api::global.global': ApiGlobalGlobal;
       'api::mentor.mentor': ApiMentorMentor;

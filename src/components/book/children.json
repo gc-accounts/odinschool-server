@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_book_children",
+  "info": {
+    "displayName": "children"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "url_slug": {
+      "type": "string"
+    }
+  }
+}

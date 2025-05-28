@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_book_chapters",
+  "info": {
+    "displayName": "chapter"
+  },
+  "options": {},
+  "attributes": {
+    "is_html": {
+      "type": "boolean",
+      "default": true
+    },
+    "content": {
+      "type": "richtext"
+    },
+    "children": {
+      "displayName": "children",
+      "type": "component",
+      "repeatable": true,
+      "component": "book.children"
+    },
+    "title": {
+      "type": "string"
+    },
+    "url_slug": {
+      "type": "string"
+    }
+  }
+}

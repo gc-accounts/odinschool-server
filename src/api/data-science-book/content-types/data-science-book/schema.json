@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "data_science_books",
+  "info": {
+    "singularName": "data-science-book",
+    "pluralName": "data-science-books",
+    "displayName": "Data Science Book"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "chapers": {
+      "displayName": "chapter",
+      "type": "component",
+      "repeatable": true,
+      "component": "book.chapter"
+    }
+  }
+}
