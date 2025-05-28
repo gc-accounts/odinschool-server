@@ -60,6 +60,11 @@
     },
     "blog_name": {
       "type": "string"
+    },
+    "url_slug": {
+      "type": "string",
+      "required": true,
+      "unique": true
     }
   }
 }
