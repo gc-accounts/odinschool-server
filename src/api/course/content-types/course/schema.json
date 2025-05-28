@@ -98,6 +98,9 @@
     },
     "price": {
       "type": "decimal"
+    },
+    "image_url_string": {
+      "type": "string"
     }
   }
 }
