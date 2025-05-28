@@ -1032,6 +1032,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     description: Schema.Attribute.RichText;
     downloads: Schema.Attribute.Integer;
     file: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    file_url: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
