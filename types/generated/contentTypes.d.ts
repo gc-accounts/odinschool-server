@@ -682,6 +682,7 @@ export interface ApiCourseModuleCourseModule
     display_order: Schema.Attribute.Integer;
     image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     image_url: Schema.Attribute.String;
+    is_rich_text_markdown: Schema.Attribute.Boolean;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',

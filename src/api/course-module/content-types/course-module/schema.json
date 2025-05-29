@@ -74,6 +74,9 @@
     },
     "display_order": {
       "type": "integer"
+    },
+    "is_rich_text_markdown": {
+      "type": "boolean"
     }
   }
 }
