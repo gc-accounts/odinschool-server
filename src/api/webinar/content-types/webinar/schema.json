@@ -70,6 +70,11 @@
     "is_odin_talk": {
       "type": "boolean",
       "default": false
+    },
+    "is_html": {
+      "type": "boolean",
+      "default": false,
+      "required": false
     }
   }
 }
