@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_financing_partners",
+  "info": {
+    "displayName": "Financing Partners",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "FinancingPartners": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}

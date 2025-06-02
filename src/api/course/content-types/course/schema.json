@@ -101,6 +101,16 @@
     },
     "image_url_string": {
       "type": "string"
+    },
+    "cohortDates": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.cohort-dates"
+    },
+    "FinancingPartners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.financing-partners"
     }
   }
 }

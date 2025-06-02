@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_cohort_dates",
+  "info": {
+    "displayName": "cohort-dates"
+  },
+  "options": {},
+  "attributes": {
+    "cohort1": {
+      "type": "date"
+    },
+    "cohort2": {
+      "type": "date"
+    }
+  }
+}

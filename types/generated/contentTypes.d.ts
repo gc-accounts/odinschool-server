@@ -758,6 +758,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
   };
   attributes: {
     city: Schema.Attribute.Relation<'manyToOne', 'api::city.city'>;
+    cohortDates: Schema.Attribute.Component<'shared.cohort-dates', false>;
     course_modules: Schema.Attribute.Relation<
       'oneToMany',
       'api::course-module.course-module'
@@ -770,6 +771,10 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     enrolled_students: Schema.Attribute.Component<
       'new.students-enrolled',
       false
+    >;
+    FinancingPartners: Schema.Attribute.Component<
+      'shared.financing-partners',
+      true
     >;
     has_certificate: Schema.Attribute.Boolean;
     image_url: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;

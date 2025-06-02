@@ -177,6 +177,28 @@ export interface PropertiesSuccessStories extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCohortDates extends Struct.ComponentSchema {
+  collectionName: 'components_shared_cohort_dates';
+  info: {
+    displayName: 'cohort-dates';
+  };
+  attributes: {
+    cohort1: Schema.Attribute.Date;
+    cohort2: Schema.Attribute.Date;
+  };
+}
+
+export interface SharedFinancingPartners extends Struct.ComponentSchema {
+  collectionName: 'components_shared_financing_partners';
+  info: {
+    description: '';
+    displayName: 'Financing Partners';
+  };
+  attributes: {
+    FinancingPartners: Schema.Attribute.Media<'images'>;
+  };
+}
+
 export interface SharedMedia extends Struct.ComponentSchema {
   collectionName: 'components_shared_media';
   info: {
@@ -256,6 +278,8 @@ declare module '@strapi/strapi' {
       'properties.journey': PropertiesJourney;
       'properties.rating': PropertiesRating;
       'properties.success-stories': PropertiesSuccessStories;
+      'shared.cohort-dates': SharedCohortDates;
+      'shared.financing-partners': SharedFinancingPartners;
       'shared.media': SharedMedia;
       'shared.quote': SharedQuote;
       'shared.rich-text': SharedRichText;
