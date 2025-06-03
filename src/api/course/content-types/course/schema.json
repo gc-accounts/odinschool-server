@@ -111,6 +111,13 @@
       "type": "component",
       "repeatable": true,
       "component": "shared.financing-partners"
+    },
+    "order": {
+      "type": "integer",
+      "unique": true
+    },
+    "longDescription": {
+      "type": "blocks"
     }
   }
 }
