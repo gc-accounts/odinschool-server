@@ -772,6 +772,7 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
       'new.students-enrolled',
       false
     >;
+    final_price: Schema.Attribute.Integer & Schema.Attribute.Required;
     FinancingPartners: Schema.Attribute.Component<
       'shared.financing-partners',
       true

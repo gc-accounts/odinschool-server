@@ -118,6 +118,10 @@
     },
     "longDescription": {
       "type": "blocks"
+    },
+    "final_price": {
+      "type": "integer",
+      "required": true
     }
   }
 }
