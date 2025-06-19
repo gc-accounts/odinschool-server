@@ -73,6 +73,12 @@
     "is_odin_talk": {
       "type": "boolean",
       "default": false
+    },
+    "seo_title": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "richtext"
     }
   }
 }
