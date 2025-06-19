@@ -607,6 +607,10 @@ export interface ApiCityCity extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::city.city'> &
       Schema.Attribute.Private;
+    master_classes: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::master-class.master-class'
+    >;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     show_in_footer: Schema.Attribute.Boolean;
@@ -951,6 +955,55 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     publishedAt: Schema.Attribute.DateTime;
     siteDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     siteName: Schema.Attribute.String & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMasterClassMasterClass extends Struct.CollectionTypeSchema {
+  collectionName: 'master_classes';
+  info: {
+    description: '';
+    displayName: 'Master Class';
+    pluralName: 'master-classes';
+    singularName: 'master-class';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    about_instructor: Schema.Attribute.RichText;
+    city: Schema.Attribute.Relation<'manyToOne', 'api::city.city'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    description: Schema.Attribute.RichText;
+    duration: Schema.Attribute.Integer;
+    image_url: Schema.Attribute.String;
+    instructor: Schema.Attribute.String;
+    is_featured: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    is_html: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    is_odin_talk: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::master-class.master-class'
+    > &
+      Schema.Attribute.Private;
+    poster_url: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    price: Schema.Attribute.Integer;
+    publishedAt: Schema.Attribute.DateTime;
+    seo_description: Schema.Attribute.Text;
+    seoTitle: Schema.Attribute.String;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
+    tags: Schema.Attribute.String;
+    time: Schema.Attribute.Time;
+    title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -1842,6 +1895,7 @@ declare module '@strapi/strapi' {
       'api::data-science-career-guide.data-science-career-guide': ApiDataScienceCareerGuideDataScienceCareerGuide;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
+      'api::master-class.master-class': ApiMasterClassMasterClass;
       'api::mentor.mentor': ApiMentorMentor;
       'api::organisation.organisation': ApiOrganisationOrganisation;
       'api::profile.profile': ApiProfileProfile;
