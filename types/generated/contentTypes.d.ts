@@ -913,6 +913,8 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     >;
     price: Schema.Attribute.Integer;
     publishedAt: Schema.Attribute.DateTime;
+    seo_description: Schema.Attribute.RichText;
+    seo_title: Schema.Attribute.String;
     slug: Schema.Attribute.String & Schema.Attribute.Required;
     tags: Schema.Attribute.String;
     time: Schema.Attribute.Time;
