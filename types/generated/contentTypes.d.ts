@@ -961,82 +961,6 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   };
 }
 
-export interface ApiLearningHubModuleLearningHubModule
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'learning_hub_modules';
-  info: {
-    description: '';
-    displayName: 'Learning Hub Module';
-    pluralName: 'learning-hub-modules';
-    singularName: 'learning-hub-module';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    author: Schema.Attribute.String;
-    content: Schema.Attribute.RichText;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    learning_hub_module: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::learning-hub.learning-hub'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::learning-hub-module.learning-hub-module'
-    > &
-      Schema.Attribute.Private;
-    post_url: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    seo_desciption: Schema.Attribute.Text;
-    seo_title: Schema.Attribute.String;
-    slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiLearningHubLearningHub extends Struct.CollectionTypeSchema {
-  collectionName: 'learning_hubs';
-  info: {
-    description: '';
-    displayName: 'Learning Hub';
-    pluralName: 'learning-hubs';
-    singularName: 'learning-hub';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    learning_hub: Schema.Attribute.Relation<
-      'oneToOne',
-      'api::learning-hub-module.learning-hub-module'
-    >;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::learning-hub.learning-hub'
-    > &
-      Schema.Attribute.Private;
-    publishedAt: Schema.Attribute.DateTime;
-    slug: Schema.Attribute.UID & Schema.Attribute.Required;
-    tags: Schema.Attribute.String;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiMasterClassMasterClass extends Struct.CollectionTypeSchema {
   collectionName: 'master_classes';
   info: {
@@ -2013,8 +1937,6 @@ declare module '@strapi/strapi' {
       'api::data-science-career-guide.data-science-career-guide': ApiDataScienceCareerGuideDataScienceCareerGuide;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
-      'api::learning-hub-module.learning-hub-module': ApiLearningHubModuleLearningHubModule;
-      'api::learning-hub.learning-hub': ApiLearningHubLearningHub;
       'api::master-class.master-class': ApiMasterClassMasterClass;
       'api::mentor.mentor': ApiMentorMentor;
       'api::odinschool-blog.odinschool-blog': ApiOdinschoolBlogOdinschoolBlog;
