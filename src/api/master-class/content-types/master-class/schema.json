@@ -1,0 +1,84 @@
+{
+  "kind": "collectionType",
+  "collectionName": "master_classes",
+  "info": {
+    "singularName": "master-class",
+    "pluralName": "master-classes",
+    "displayName": "Master Class",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "about_instructor": {
+      "type": "richtext"
+    },
+    "date": {
+      "type": "date"
+    },
+    "time": {
+      "type": "time"
+    },
+    "poster_url": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "price": {
+      "type": "integer"
+    },
+    "duration": {
+      "type": "integer"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "is_featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_html": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_odin_talk": {
+      "type": "boolean",
+      "default": false
+    },
+    "city": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::city.city",
+      "inversedBy": "master_classes"
+    },
+    "seoTitle": {
+      "type": "string"
+    },
+    "seo_description": {
+      "type": "text"
+    },
+    "instructor": {
+      "type": "string"
+    }
+  }
+}
