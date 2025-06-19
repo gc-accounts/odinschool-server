@@ -1,0 +1,54 @@
+{
+  "kind": "collectionType",
+  "collectionName": "odinschool_blogs",
+  "info": {
+    "singularName": "odinschool-blog",
+    "pluralName": "odinschool-blogs",
+    "displayName": "Odinschool Blogs",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "blogName": {
+      "type": "string"
+    },
+    "postTitle": {
+      "type": "text"
+    },
+    "postSeoTtitle": {
+      "type": "text"
+    },
+    "postLanguage": {
+      "type": "string"
+    },
+    "postUrl": {
+      "type": "text"
+    },
+    "author": {
+      "type": "string"
+    },
+    "tags": {
+      "type": "string"
+    },
+    "metaDescription": {
+      "type": "text"
+    },
+    "publishDate": {
+      "type": "string"
+    },
+    "lastModifiedDate": {
+      "type": "string"
+    },
+    "postBody": {
+      "type": "richtext"
+    },
+    "featuredImageUrl": {
+      "type": "string"
+    },
+    "blogStatus": {
+      "type": "string"
+    }
+  }
+}

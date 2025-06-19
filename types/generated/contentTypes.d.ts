@@ -1053,6 +1053,48 @@ export interface ApiMentorMentor extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiOdinschoolBlogOdinschoolBlog
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'odinschool_blogs';
+  info: {
+    description: '';
+    displayName: 'Odinschool Blogs';
+    pluralName: 'odinschool-blogs';
+    singularName: 'odinschool-blog';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    blogName: Schema.Attribute.String;
+    blogStatus: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    featuredImageUrl: Schema.Attribute.String;
+    lastModifiedDate: Schema.Attribute.String;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::odinschool-blog.odinschool-blog'
+    > &
+      Schema.Attribute.Private;
+    metaDescription: Schema.Attribute.Text;
+    postBody: Schema.Attribute.RichText;
+    postLanguage: Schema.Attribute.String;
+    postSeoTtitle: Schema.Attribute.Text;
+    postTitle: Schema.Attribute.Text;
+    postUrl: Schema.Attribute.Text;
+    publishDate: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    tags: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiOrganisationOrganisation
   extends Struct.CollectionTypeSchema {
   collectionName: 'organisations';
@@ -1897,6 +1939,7 @@ declare module '@strapi/strapi' {
       'api::global.global': ApiGlobalGlobal;
       'api::master-class.master-class': ApiMasterClassMasterClass;
       'api::mentor.mentor': ApiMentorMentor;
+      'api::odinschool-blog.odinschool-blog': ApiOdinschoolBlogOdinschoolBlog;
       'api::organisation.organisation': ApiOrganisationOrganisation;
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
