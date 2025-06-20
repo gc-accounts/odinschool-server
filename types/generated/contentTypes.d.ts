@@ -1072,6 +1072,9 @@ export interface ApiOdinschoolBlogOdinschoolBlog
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    featuredImage: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    >;
     featuredImageUrl: Schema.Attribute.String;
     lastModifiedDate: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
