@@ -787,6 +787,8 @@ export interface ApiCourseCourse extends Struct.CollectionTypeSchema {
     image_url_string: Schema.Attribute.String;
     is_featured: Schema.Attribute.Boolean;
     is_learning_hub: Schema.Attribute.Boolean;
+    isCourseListing: Schema.Attribute.Boolean &
+      Schema.Attribute.DefaultTo<true>;
     level: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<

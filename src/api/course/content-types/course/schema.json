@@ -122,6 +122,10 @@
     "final_price": {
       "type": "integer",
       "required": true
+    },
+    "isCourseListing": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
