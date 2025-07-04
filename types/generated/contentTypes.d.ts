@@ -698,9 +698,7 @@ export interface ApiCourseModuleCourseModule
     old_id: Schema.Attribute.String & Schema.Attribute.Unique;
     publishedAt: Schema.Attribute.DateTime;
     rich_description: Schema.Attribute.RichText;
-    slug: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.Unique;
+    slug: Schema.Attribute.String & Schema.Attribute.Required;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &

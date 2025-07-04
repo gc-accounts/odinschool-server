@@ -29,7 +29,7 @@
     "slug": {
       "type": "string",
       "required": true,
-      "unique": true
+      "unique": false
     },
     "old_id": {
       "type": "string",
