@@ -1107,7 +1107,7 @@ export interface ApiOdintalkOdintalk extends Struct.CollectionTypeSchema {
     singularName: 'odintalk';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
     create_date: Schema.Attribute.Date;
