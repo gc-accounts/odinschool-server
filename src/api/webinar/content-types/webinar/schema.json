@@ -75,6 +75,16 @@
       "type": "boolean",
       "default": false,
       "required": false
+    },
+    "video_url": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false
     }
   }
 }
