@@ -41,7 +41,7 @@
     "video_link": {
       "type": "string"
     },
-    "meta_description": {
+    "seo_description": {
       "type": "text"
     },
     "date": {
@@ -61,6 +61,13 @@
         "Statistics"
       ],
       "default": "Data Science"
+    },
+    "is_html": {
+      "type": "boolean",
+      "default": false
+    },
+    "seo_title": {
+      "type": "string"
     }
   }
 }
