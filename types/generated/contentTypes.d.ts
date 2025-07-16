@@ -1115,15 +1115,17 @@ export interface ApiOdintalkOdintalk extends Struct.CollectionTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     date: Schema.Attribute.Date;
+    is_html: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::odintalk.odintalk'
     > &
       Schema.Attribute.Private;
-    meta_description: Schema.Attribute.Text;
     name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    seo_description: Schema.Attribute.Text;
+    seo_title: Schema.Attribute.String;
     speaker_about: Schema.Attribute.RichText;
     speaker_company_logo: Schema.Attribute.String;
     speaker_designation: Schema.Attribute.String;
