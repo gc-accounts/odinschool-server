@@ -1,0 +1,66 @@
+{
+  "kind": "collectionType",
+  "collectionName": "odintalks",
+  "info": {
+    "singularName": "odintalk",
+    "pluralName": "odintalks",
+    "displayName": "Odintalk",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "create_date": {
+      "type": "date"
+    },
+    "update_date": {
+      "type": "date"
+    },
+    "speaker_name": {
+      "type": "string"
+    },
+    "speaker_designation": {
+      "type": "string"
+    },
+    "speaker_company_logo": {
+      "type": "string"
+    },
+    "video_thumbnail": {
+      "type": "string"
+    },
+    "video_link": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date"
+    },
+    "speaker_about": {
+      "type": "richtext"
+    },
+    "synopsis": {
+      "type": "richtext"
+    },
+    "tags": {
+      "type": "enumeration",
+      "enum": [
+        "Data Science",
+        "Data Analytics",
+        "Statistics"
+      ],
+      "default": "Data Science"
+    }
+  }
+}
