@@ -1098,6 +1098,52 @@ export interface ApiOdinschoolBlogOdinschoolBlog
   };
 }
 
+export interface ApiOdintalkOdintalk extends Struct.CollectionTypeSchema {
+  collectionName: 'odintalks';
+  info: {
+    description: '';
+    displayName: 'Odintalk';
+    pluralName: 'odintalks';
+    singularName: 'odintalk';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    create_date: Schema.Attribute.Date;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    date: Schema.Attribute.Date;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::odintalk.odintalk'
+    > &
+      Schema.Attribute.Private;
+    meta_description: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    speaker_about: Schema.Attribute.RichText;
+    speaker_company_logo: Schema.Attribute.String;
+    speaker_designation: Schema.Attribute.String;
+    speaker_name: Schema.Attribute.String;
+    synopsis: Schema.Attribute.RichText;
+    tags: Schema.Attribute.Enumeration<
+      ['Data Science', 'Data Analytics', 'Statistics']
+    > &
+      Schema.Attribute.DefaultTo<'Data Science'>;
+    title: Schema.Attribute.String;
+    update_date: Schema.Attribute.Date;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    url: Schema.Attribute.String;
+    video_link: Schema.Attribute.String;
+    video_thumbnail: Schema.Attribute.String;
+  };
+}
+
 export interface ApiOrganisationOrganisation
   extends Struct.CollectionTypeSchema {
   collectionName: 'organisations';
@@ -1944,6 +1990,7 @@ declare module '@strapi/strapi' {
       'api::master-class.master-class': ApiMasterClassMasterClass;
       'api::mentor.mentor': ApiMentorMentor;
       'api::odinschool-blog.odinschool-blog': ApiOdinschoolBlogOdinschoolBlog;
+      'api::odintalk.odintalk': ApiOdintalkOdintalk;
       'api::organisation.organisation': ApiOrganisationOrganisation;
       'api::profile.profile': ApiProfileProfile;
       'api::project.project': ApiProjectProject;
